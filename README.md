@@ -1,3 +1,5 @@
+# COVID Detection and Severity Prediction with 3D-ConvNeXt and Custom Pretrainings
+
 This is the code for our submissions at the 2nd Covid19 Competition.
 We provide trained models for inference. 
 Furthermore, we also provide the pretrained models in order to reproduce our trainings.
