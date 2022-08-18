@@ -82,7 +82,7 @@ If you would like to use a custom checkpoint from a previous training, use `pyth
 You can run the imagenet-pretraining with python -m training.pretraining.main --model convnext_pretraining --drop_path 0.1 --batch_size 256 --lr 4e-3 --update_freq 16 --model_ema true --model_ema_eval true --data_path YOUR/DATA/PATH --output_dir YOUR/OUTPUT/DIR --log_dir YOUR/LOG/DIR
 
 
-# Pretrainings:
+## Pretrainings:
 THE EXPLANATION WILL BE ADDED SOON.
 
 
