@@ -32,9 +32,9 @@ Soon, the instructions for the execution of the pretraining code will be added
                 datasize = 256 #Shape (HxWxD) of the data is 256x256x256
             )
     
-    The pretrained weights can be downloaded with the script download_saved_models.sh and the data has to be unzipped. You need to set PRETRAINED_PATH to the unzipped folder.
-    Furthermore, you need to set YOURNUMBEROFCLASSES (number of output classes, here 4 for severity and 2 for detection) and PRETRAINING according to your needs. 
-    PRETRAINING can be in {'imagenet', 'segmentationECCVFull', 'segmiaECCVFull', 'multitaskECCVFull'} for the models used in the paper.
+The pretrained weights can be downloaded with the script download_saved_models.sh and the file has to be unzipped. You need to set PRETRAINED_PATH to the unzipped folder.
+Furthermore, you need to set YOURNUMBEROFCLASSES (number of output classes, here 4 for severity and 2 for detection) and PRETRAINING according to your needs. 
+PRETRAINING can be in {'imagenet', 'segmentationECCVFull', 'segmiaECCVFull', 'multitaskECCVFull'} for the models used in the paper.
     
 
 
