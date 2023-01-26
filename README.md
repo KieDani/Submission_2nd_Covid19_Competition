@@ -16,6 +16,28 @@ Soon, the instructions for the execution of the pretraining code will be added
     pip install -r min_requirements.txt
 
 
+## If you just want to load our pretrained models and use them in your own code, you can try the following:
+    
+    from training.models.convnext import convnext_tiny_3d
+    model = convnext_tiny_3d(
+                pretrained=True,
+                added_dim=2,
+                init_mode='two_g', #alternatively use 'full'; this is only important if pretrained_mode = 'imagenet'
+                ten_net=0,
+                in_chan=1,
+                use_transformer= False,
+                pretrained_path=PRETRAINED_PATH,
+                pretrained_mode=PRETRAINING,
+                drop_path=0.0,
+                datasize = 256 #Shape (HxWxD) of the data is 256x256x256
+            )
+    
+    The pretrained weights can be downloaded with the script download_saved_models.sh and unzip the data. You need to set PRETRAINED_PATH to the unzipped folder.
+    Furthermore, you need to set YOURNUMBEROFCLASSES (number of output classes, here 4 for severity and 2 for detection) and PRETRAINING according to your needs. 
+    PRETRAINING can be in {'imagenet', 'segmentationECCVFull', 'segmiaECCVFull', 'multitaskECCVFull'} for the models used in the paper.
+    
+
+
 
 ## Data preparation:
 Set DATA_PATH = 'Path/TO/DATASET' in paths.py. The dataset will be further processed and saved in cache_path in paths.py. It is recommended to use absolute paths. Store the cov19d-dataset in 'Path/TO/DATASET'.
@@ -81,9 +103,6 @@ If you would like to use a custom checkpoint from a previous training, use `pyth
 ## Imagenet pretraining:
 You can run the imagenet-pretraining with python -m training.pretraining.main --model convnext_pretraining --drop_path 0.1 --batch_size 256 --lr 4e-3 --update_freq 16 --model_ema true --model_ema_eval true --data_path YOUR/DATA/PATH --output_dir YOUR/OUTPUT/DIR --log_dir YOUR/LOG/DIR
 
-
-## Pretrainings:
-THE EXPLANATION WILL BE ADDED SOON.
 
 
 
